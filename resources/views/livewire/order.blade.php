@@ -38,6 +38,9 @@
                                             <h2 class="text-red-500">Late Delivery</h2>
                                         @endif
                                     </h4>
+                                    <x-jet-button class="bg-purple-800" wire:click="submitWork({{$order->id}})">
+                                        {{ __('Submit Work') }}
+                                    </x-jet-button>
                                 </div>
                             @else
                                 <div class="mt-2 flex-row">

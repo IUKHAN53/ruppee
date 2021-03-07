@@ -16,7 +16,7 @@
                             <p id="job" class="text-gray-800 mt-2">{{$service->description}}</p>
                             <div class="flex mt-5">
                                 <img alt="avatar" class="w-6 rounded-full border-2 border-gray-300"
-                                     src="{{Auth::user()->profile_photo_url}}"/>
+                                     src="{{$service->user->profile_photo_url}}"/>
                                 <p class="ml-3">{{auth()->user()->name}}</p>
                             </div>
                             <div class="justify-end mt-2">
