@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Request Service') }}
+            {{ __('Sell Service') }}
         </h2>
     </x-slot>
 
@@ -73,7 +73,7 @@
 
                         <x-jet-secondary-button class="mt-2 mr-2" type="button"
                                                 x-on:click.prevent="$refs.photo.click()">
-                            {{ __('Select A New Photo') }}
+                            {{ __('Choose a featured Photo') }}
                         </x-jet-secondary-button>
 
                         <x-jet-input-error for="photo" class="mt-2"/>

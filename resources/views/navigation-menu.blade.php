@@ -27,6 +27,12 @@
                     <x-jet-nav-link href="{{ route('analytics') }}" :active="request()->routeIs('analytics')">
                         {{ __('Analytics') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('sell-service') }}" :active="request()->routeIs('sell-service')">
+                        {{ __('Sell') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('request-service') }}" :active="request()->routeIs('request-service')">
+                        {{ __('Request') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile')">
                         {{ __('My Details') }}
                     </x-jet-nav-link>
@@ -69,12 +75,6 @@
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
-                            </x-jet-dropdown-link>
-                            <x-jet-dropdown-link href="{{ route('sell-service') }}">
-                                {{ __('Sell Service') }}
-                            </x-jet-dropdown-link>
-                            <x-jet-dropdown-link href="{{ route('request-service') }}">
-                                {{ __('Request Service') }}
                             </x-jet-dropdown-link>
 
                             <div class="border-t border-gray-100"></div>

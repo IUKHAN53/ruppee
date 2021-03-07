@@ -19,7 +19,15 @@ class Order extends Component
         ]);
     }
 
-    public function acceptOffer($order_id){}
-    public function rejectOffer($order_id){}
+    public function acceptOffer($order_id){
+        $order = BuyerProposal::find($order_id);
+        $order->status = 'started';
+        $order->save();
+    }
+    public function rejectOffer($order_id){
+        $order = BuyerProposal::find($order_id);
+        $order->status = 'rejected';
+        $order->save();
+    }
     public function chat($order_id){}
 }
