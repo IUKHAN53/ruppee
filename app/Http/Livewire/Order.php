@@ -15,8 +15,10 @@ class Order extends Component
         $services = array_map(function ($item) {
             return $item['id'];
         }, $services);
+        $requested = BuyerProposal::where('user_id', auth()->id())->get();
         return view('livewire.order')->with([
-            'orders' => BuyerProposal::whereIn('service_id', $services)->get()
+            'orders' => BuyerProposal::whereIn('service_id', $services)->get(),
+            'requested_orders' => $requested,
         ]);
     }
 
@@ -36,9 +38,7 @@ class Order extends Component
 
     public function submitWork($order_id)
     {
-        $order = BuyerProposal::find($order_id);
-        $order->status = 'rejected';
-        $order->save();
+        $this->redirect(route('submit-work',['order_id'=>$order_id]));
     }
 
     public function chat($order_id)
@@ -56,5 +56,9 @@ class Order extends Component
         }
         return redirect(route('messages', ['inbox_id' => $inbox->id, 'user_id' => $order->user_id]));
 
+    }
+
+    public function checkWork($order_id){
+        return redirect(route('checkWork', ['order_id' => $order_id]));
     }
 }
