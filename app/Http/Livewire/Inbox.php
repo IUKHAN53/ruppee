@@ -30,7 +30,6 @@ class Inbox extends Component
         $this->messages = collect();
         $this->chat_list = Inboxes::where('name', 'like', '%user_' . auth()->id() . '_%')->get();
     }
-
     public function render()
     {
         return view('livewire.inbox');

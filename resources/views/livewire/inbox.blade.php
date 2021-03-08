@@ -23,34 +23,34 @@
             <div class="flex flex-row justify-between bg-white">
                 <!-- chat list -->
                 <div class="flex flex-col w-2/5 border-r-2 overflow-y-auto">
-                    <!-- search compt -->
                     <div class="border-b-2 py-4 px-2">
                         <input type="text"
                                placeholder="search chatting"
-                               class="py-2 px-2 border-2 border-gray-200 rounded-2xl w-full"
-                        />
+                               class="py-2 px-2 border-2 border-gray-200 rounded-2xl w-full"/>
                     </div>
-                    <!-- end search compt -->
                     <!-- user list -->
                     @foreach($chat_list as $chat)
-                        @php($sender = \App\Models\User::find(getSendersId($chat->name)))
-                        <div class="flex flex-row py-4 px-2 items-center border-b-2 {{'border-l-4 border-blue-400'}}"
-                             wire:click="loadMessages({{$chat->id}},{{$sender->id}})">
+                        @php($sender = \App\Models\User::where('id',getSendersId($chat->name))->first())
+                        <div class="flex flex-row py-4 px-2 items-center border-b-2 border-l-4 border-blue-400"
+                             wire:key="$chat->id" wire:click="loadMessages({{$chat->id}},{{$sender->id}})">
+
                             <div class="w-1/4">
                                 <img src="{{$sender->profile_photo_url}}"
                                      class="object-cover h-12 w-12 rounded-full"
                                      alt="avatar"/>
                             </div>
+
                             <div class="w-full">
                                 <div class="text-lg font-semibold">{{$sender->name}}</div>
                             </div>
                         </div>
+
                     @endforeach
                 </div>
                 <!-- end chat list -->
                 <!-- message -->
                 <div class="w-full px-5 flex flex-col justify-between">
-                    <div class="flex flex-col mt-5 overflow-auto h-80" >
+                    <div class="flex flex-col mt-5 overflow-auto h-80">
                         @foreach($messages as $message)
                             @if($message->sender_id != auth()->id())
                                 <div class="flex justify-end mb-4">
@@ -80,7 +80,7 @@
                     <div class="py-5">
                         <input class="w-full bg-gray-300 py-5 px-3 rounded-xl" type="text" placeholder="type message..."
                                wire:model.defer="new_message" wire:keydown.enter="sendMessage"
-                        {{($sel_sender)?'':'disabled'}}/>
+                            {{($sel_sender)?'':'disabled'}}/>
                         <div class="justify-end">
                             <x-jet-input-error for="new_message" class="mt-2"/>
                             <span class="text-sm text-gray-500 ">Press Enter to send</span>

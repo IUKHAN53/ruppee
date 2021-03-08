@@ -17,7 +17,7 @@
                             <div class="flex mt-5">
                                 <img alt="avatar" class="w-6 rounded-full border-2 border-gray-300"
                                      src="{{$service->user->profile_photo_url}}"/>
-                                <p class="ml-3">{{auth()->user()->name}}</p>
+                                <p class="ml-3">{{$service->user->name}}</p>
                             </div>
                             <div class="justify-end mt-2">
                                 <p><span class="font-bold">Starting From:</span> Rs. {{$service->start_price}}</p>

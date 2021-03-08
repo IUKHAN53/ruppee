@@ -42,12 +42,6 @@
                                      wire:model.defer="duration" autocomplete="new-duration"/>
                         <x-jet-input-error for="duration" class="mt-2"/>
                     </div>
-                    <div class="col-span-6 sm:col-span-6">
-                        <x-jet-label for="duration" value="{{ __('Enter Delivery Duration (Days)') }}"/>
-                        <x-jet-input id="duration" type="number" min="0" class="mt-1 block w-full"
-                                     wire:model.defer="duration" autocomplete="new-duration"/>
-                        <x-jet-input-error for="duration" class="mt-2"/>
-                    </div>
 
                     <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
                         <!-- Service Photo File Input -->
