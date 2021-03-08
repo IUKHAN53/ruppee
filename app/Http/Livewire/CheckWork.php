@@ -16,7 +16,6 @@ class CheckWork extends Component
     public $service;
     public $work;
 
-
     public function mount(){
         $this->order = BuyerProposal::find($this->order_id);
         $this->service = Service::find($this->order->service_id);
