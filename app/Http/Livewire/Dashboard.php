@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\BuyerProposal;
 use App\Models\BuyerRequest;
+use App\Models\Inbox;
 use App\Models\Service;
 use Livewire\Component;
 
@@ -22,5 +24,24 @@ class Dashboard extends Component
     public function render()
     {
         return view('livewire.dashboard');
+    }
+    public function chat($order_id)
+    {
+        $service = Service::find($order_id);
+
+        $inbox = Inbox::where('name', getInbox_name(auth()->id(), $service->user_id))
+            ->orwhere('name', getInbox_name($service->user_id, auth()->id()))->first();
+
+        if ($inbox) {
+        } else {
+            $inbox = Inbox::create([
+                'name' => getInbox_name(auth()->id(), $service->user_id)
+            ]);
+        }
+        return redirect(route('messages', ['inbox_id' => $inbox->id, 'user_id' => $service->user_id]));
+
+    }
+    public function buyService($id){
+        $this->redirect(route('buy-service',['service_id'=>$id]));
     }
 }
