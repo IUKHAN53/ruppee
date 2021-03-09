@@ -10,7 +10,7 @@
             <div class="mt-2">
                 <div class=" bg-white border-2 border-gray-300 p-5 rounded-md tracking-wide shadow-lg">
                     <div id="header" class="flex">
-                        <img alt="mountain" class="w-45 rounded-md border-2 border-gray-300" src="{{asset('storage/photos/' . $service->featured_image)}}" />
+                        <img alt="mountain" class="rounded-md border-2 border-gray-300" style="height: 14rem;width: 14rem" src="{{asset('storage/photos/' . $service->featured_image)}}" />
                         <div id="body" class="flex flex-col ml-5">
                             <h4 id="name" class="text-xl font-semibold mb-2">{{$service->title}}</h4>
                             <p id="job" class="text-gray-800 mt-2">{{$service->description}}</p>
