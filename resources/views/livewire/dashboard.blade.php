@@ -8,9 +8,9 @@
     <div class="container">
         <div class="trending_services mt-4">
             <span class="xl:text-lg">Trending services</span>
-            <div class="flex-row mt-4">
+            <div class="grid grid-cols-3 gap-4">
                 @foreach($trending_services as $service)
-                    <div class="w-full max-w-sm overflow-hidden rounded border bg-white shadow">
+                    <div class="col-auto max-w-sm overflow-hidden rounded border bg-white shadow">
                         <div class="relative">
                             <div class="h-48 bg-cover bg-no-repeat bg-center"
                                  style="background-image: url({{asset('storage/photos/' . $service->featured_image)}})">
@@ -41,9 +41,9 @@
         <x-jet-section-border></x-jet-section-border>
         <div class="top_services mt-4">
             <span class="xl:text-lg">Top services</span>
-            <div class="flex-row mt-4">
+            <div class="grid grid-cols-3 gap-4">
                 @foreach($top_services as $service)
-                    <div class="w-full max-w-sm overflow-hidden rounded border bg-white shadow">
+                    <div class="col-auto max-w-sm overflow-hidden rounded border bg-white shadow">
                         <div class="relative">
                             <div class="h-48 bg-cover bg-no-repeat bg-center"
                                  style="background-image: url({{asset('storage/photos/' . $service->featured_image)}})">
@@ -74,9 +74,9 @@
         <x-jet-section-border></x-jet-section-border>
         <div class="top_services mt-4">
             <span class="xl:text-lg">Buyer Requests</span>
-            <div class="flex-row mt-4">
+            <div class="grid grid-cols-3 gap-4">
                 @foreach($buyer_requests as $request)
-                    <div class="w-full max-w-sm overflow-hidden rounded border bg-white shadow">
+                    <div class="col-auto overflow-hidden rounded border bg-white shadow">
                         <div class="relative">
                             <div class="h-48 bg-cover bg-no-repeat bg-center"
                                  style="background-image: url({{asset('storage/photos/' . $service->featured_image)}})">

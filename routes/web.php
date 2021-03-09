@@ -12,11 +12,8 @@ use App\Http\Livewire\ServicesSell;
 use App\Http\Livewire\SubmitWork;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect(route('dashboard'));
-});
 
-Route::group(['auth:sanctum', 'verified'],function (){
+Route::middleware('auth:sanctum')->group(function (){
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/messages',Inbox::class)->name('messages');
     Route::get('/orders',Order::class)->name('orders');
@@ -27,5 +24,7 @@ Route::group(['auth:sanctum', 'verified'],function (){
     Route::get('/buy-service/{service_id}',BuyService::class)->name('buy-service');
     Route::get('/submit-work',SubmitWork::class)->name('submit-work');
     Route::get('/check-work',CheckWork::class)->name('checkWork');
+    Route::get('/', Dashboard::class)->name('dashboard');
+
 });
 
