@@ -118,16 +118,27 @@
                             <div class="row-auto gap-2"><p class="text-purple-500">{{$request->title}}</p></div>
                             <div class="row-auto gap-2"><p class="text-xs text-gray-500">{{$request->requirement}}</p>
                             </div>
-                            <div class="row-auto gap-2"><p class="text-xs text-gray-500">{{$request->user->name}}</p>
-                            </div>
-                            <div class="row-auto gap-2"><p class="text-xs text-green-500">Rs. {{$request->price}}</p>
+                            <div class="row-auto gap-2"><p class="text-xs text-blue-500">{{$request->user->name}}</p>
                             </div>
                         </div>
+                        <div class="">
+                            <div class="flex justify-start ml-3 mb-3"><p class="text-xs text-green-500 font-bold">Rs. {{$request->price}}</p>
+                            </div>
+                            <div class="flex justify-end mb-3 mr-3">
+                                <x-jet-button class="bg-grey-800" wire:click="sendSellerProposal({{$request->id}})">
+                                    Send proposal
+                                </x-jet-button>
+                            </div>
+                        </div>
+
                     </div>
                 @endforeach
             </div>
 
         </div>
+
+    </div>
+    <div class="mt-6">
 
     </div>
 </div>

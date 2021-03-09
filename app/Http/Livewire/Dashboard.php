@@ -44,4 +44,9 @@ class Dashboard extends Component
     public function buyService($id){
         $this->redirect(route('buy-service',['service_id'=>$id]));
     }
+
+    public function sendSellerProposal($id)
+    {
+        dd('Under Construction Stay Tuned');
+    }
 }
