@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class Inbox extends Component
 {
-    protected $queryString = ['inbox_id','user_id'];
+    protected $queryString = ['inbox_id', 'user_id'];
     public $inbox_id;
     public $user_id;
     public $new_message;
@@ -23,13 +23,14 @@ class Inbox extends Component
 
     public function mount()
     {
-        if(isset($this->inbox_id)){
-            $this->loadMessages($this->inbox_id,$this->user_id);
+        if (isset($this->inbox_id)) {
+            $this->loadMessages($this->inbox_id, $this->user_id);
             $this->emit('refreshMessages');
         };
         $this->messages = collect();
         $this->chat_list = Inboxes::where('name', 'like', '%user_' . auth()->id() . '_%')->get();
     }
+
     public function render()
     {
         return view('livewire.inbox');
@@ -37,8 +38,10 @@ class Inbox extends Component
 
     public function refreshChat()
     {
+
         $this->new_message = '';
         $this->loadMessages($this->inbox, $this->sel_sender->id);
+
     }
 
     public function loadMessages($inbox, $user_id)
@@ -52,7 +55,7 @@ class Inbox extends Component
     {
         $this->validate([
             'new_message' => 'required|string',
-        ],[
+        ], [
             'new_message.required' => "Please Put some text",
             'new_message.string' => "Must be a valid text",
         ]);
@@ -64,4 +67,5 @@ class Inbox extends Component
         ]))
             $this->emit('refreshMessages');
     }
+
 }

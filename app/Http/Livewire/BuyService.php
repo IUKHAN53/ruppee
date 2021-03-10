@@ -35,6 +35,6 @@ class BuyService extends Component
             'service_id' => $this->service->id,
             'user_id' => auth()->id(),
         ]))
-            $this->emit('saved');
+            $this->redirect(route('orders'));
     }
 }

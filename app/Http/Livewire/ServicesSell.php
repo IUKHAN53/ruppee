@@ -42,7 +42,8 @@ class ServicesSell extends Component
             'featured_image' => $name,
             'user_id' => auth()->id(),
         ]))
-            $this->emit('saved');
+            $this->redirect(route('services'));
+
 
     }
 }

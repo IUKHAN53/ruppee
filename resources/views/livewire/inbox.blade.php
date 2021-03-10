@@ -31,9 +31,8 @@
                     <!-- user list -->
                     @foreach($chat_list as $chat)
                         @php($sender = \App\Models\User::where('id',getSendersId($chat->name))->first())
-                        <div class="flex flex-row py-4 px-2 items-center border-b-2 border-l-4 border-blue-400"
+                        <div class="flex flex-row py-4 px-2 items-center border-b-2 border-l-4 {{($inbox == $chat->id)?'border-blue-400':''}}"
                              wire:key="$chat->id" wire:click="loadMessages({{$chat->id}},{{$sender->id}})">
-
                             <div class="w-1/4">
                                 <img src="{{$sender->profile_photo_url}}"
                                      class="object-cover h-12 w-12 rounded-full"
@@ -120,5 +119,14 @@
         </div>
 
     </div>
+{{--    @while($sel_sender)--}}
+{{--        <script>--}}
+{{--            document.addEventListener('livewire:load', function () {--}}
+{{--                setTimeout(function () {--}}
+{{--                    Livewire.emit('refreshMessages')--}}
+{{--                }, 5000);--}}
+{{--            });--}}
+{{--        </script>--}}
+{{--    @endwhile--}}
 </div>
 

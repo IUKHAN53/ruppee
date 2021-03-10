@@ -75,7 +75,7 @@
                         <div class="p-3">
                             <h3 class="mr-10 text-sm truncate-2nd">
                                 <a class="hover:text-blue-500"
-                                   href="/huawwei-p20-pro-complete-set-with-box-a.7186128376">{{$service->title}}</a>
+                                   href="#">{{$service->title}}</a>
                             </h3>
                             <div class="flex items-start justify-between">
                                 <p class="text-xs text-gray-500">{{$service->description}}</p>

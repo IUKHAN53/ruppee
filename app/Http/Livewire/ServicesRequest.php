@@ -31,6 +31,7 @@ class ServicesRequest extends Component
             'duration' => $this->duration,
             'user_id' => auth()->id(),
         ]))
-            $this->emit('saved');
+            $this->redirect(route('dashboard'));
+
     }
 }
