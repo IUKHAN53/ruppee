@@ -20,32 +20,20 @@
       </li>
 
 
-      <li class="nav-item nav-category">Pages</li>
-      <li class="nav-item {{ active_class(['general/*']) }}">
-        <a class="nav-link" data-toggle="collapse" href="#general" role="button" aria-expanded="{{ is_active_route(['general/*']) }}" aria-controls="general">
+      <li class="nav-item nav-category">Service</li>
+      <li class="nav-item {{ active_class(['admin/services/*']) }}">
+        <a class="nav-link" data-toggle="collapse" href="#general" role="button" aria-expanded="{{ is_active_route(['services/*']) }}" aria-controls="general">
           <i class="link-icon" data-feather="book"></i>
-          <span class="link-title">Special Pages</span>
+          <span class="link-title">Services</span>
           <i class="link-arrow" data-feather="chevron-down"></i>
         </a>
-        <div class="collapse {{ show_class(['general/*']) }}" id="general">
+        <div class="collapse {{ show_class(['services/*']) }}" id="general">
           <ul class="nav sub-menu">
             <li class="nav-item">
-              <a href="{{ url('/general/blank-page') }}" class="nav-link {{ active_class(['general/blank-page']) }}">Blank page</a>
+              <a href="{{ route('admin-services') }}" class="nav-link {{ active_class(['services/index']) }}">View Services</a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/general/faq') }}" class="nav-link {{ active_class(['general/faq']) }}">Faq</a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/general/invoice') }}" class="nav-link {{ active_class(['general/invoice']) }}">Invoice</a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/general/profile') }}" class="nav-link {{ active_class(['general/profile']) }}">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/general/pricing') }}" class="nav-link {{ active_class(['general/pricing']) }}">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/general/timeline') }}" class="nav-link {{ active_class(['general/timeline']) }}">Timeline</a>
+                <a href="{{ route('admin-services-create') }}" class="nav-link {{ active_class(['services/create']) }}">Create Service</a>
             </li>
           </ul>
         </div>

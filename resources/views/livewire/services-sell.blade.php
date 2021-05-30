@@ -9,11 +9,11 @@
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             <x-jet-form-section submit="saveService">
                 <x-slot name="title">
-                    {{ __('Make a request') }}
+                    {{ __('Make a service') }}
                 </x-slot>
 
                 <x-slot name="description">
-                    {{ __('Make a request to get proposals from sellers') }}
+                    {{ __('Create a service to get interviews from buyers') }}
                 </x-slot>
 
                 <x-slot name="form">

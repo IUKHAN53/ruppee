@@ -27,7 +27,7 @@ License: You must have a valid license purchased only from https://themeforest.n
   @stack('plugin-styles')
 
   <!-- common css -->
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+  <link href="{{ asset('css/admin.css') }}" rel="stylesheet" />
   <!-- end common css -->
 
   @stack('style')
@@ -48,7 +48,7 @@ License: You must have a valid license purchased only from https://themeforest.n
   </div>
 
     <!-- base js -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
     <script src="{{ asset('assets/plugins/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <!-- end base js -->
