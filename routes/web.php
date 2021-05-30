@@ -25,6 +25,5 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/submit-work',SubmitWork::class)->name('submit-work');
     Route::get('/check-work',CheckWork::class)->name('checkWork');
     Route::get('/', Dashboard::class)->name('dashboard');
-
 });
 

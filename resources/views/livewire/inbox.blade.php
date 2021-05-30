@@ -43,7 +43,6 @@
                                 <div class="text-lg font-semibold">{{$sender->name}}</div>
                             </div>
                         </div>
-
                     @endforeach
                 </div>
                 <!-- end chat list -->

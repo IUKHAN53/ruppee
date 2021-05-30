@@ -6,6 +6,7 @@ use App\Models\BuyerProposal;
 use App\Models\BuyerRequest;
 use App\Models\Inbox;
 use App\Models\Service;
+use http\Client\Curl\User;
 use Livewire\Component;
 
 class Dashboard extends Component
@@ -16,6 +17,9 @@ class Dashboard extends Component
 
 
     public function mount(){
+        if(auth()->user()->is_admin){
+            $this->redirect(route('admin-dashboard'));
+        }
         $this->trending_services = Service::inRandomOrder()->limit(4)->get();
         $this->top_services = Service::inRandomOrder()->limit(4)->get();
         $this->buyer_requests = BuyerRequest::all();
@@ -32,8 +36,7 @@ class Dashboard extends Component
         $inbox = Inbox::where('name', getInbox_name(auth()->id(), $service->user_id))
             ->orwhere('name', getInbox_name($service->user_id, auth()->id()))->first();
 
-        if ($inbox) {
-        } else {
+        if (!$inbox) {
             $inbox = Inbox::create([
                 'name' => getInbox_name(auth()->id(), $service->user_id)
             ]);
