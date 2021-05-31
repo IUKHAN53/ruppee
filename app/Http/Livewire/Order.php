@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\BuyerProposal;
+use App\Models\Dispute;
 use App\Models\Inbox;
 use App\Models\Service;
 use Livewire\Component;
@@ -38,7 +39,18 @@ class Order extends Component
 
     public function submitWork($order_id)
     {
-        $this->redirect(route('submit-work',['order_id'=>$order_id]));
+        $this->redirect(route('submit-work', ['order_id' => $order_id]));
+    }
+
+    public function disputeWork($order_id)
+    {
+        Dispute::create([
+            'buyer_proposal_id' => $order_id,
+            'user_id' => auth()->id(),
+            'decision_for' => 0,
+            'decision_against' => 0,
+        ]);
+        $this->redirect(route('orders'));
     }
 
     public function chat($order_id)
@@ -58,7 +70,8 @@ class Order extends Component
 
     }
 
-    public function checkWork($order_id){
+    public function checkWork($order_id)
+    {
         return redirect(route('checkWork', ['order_id' => $order_id]));
     }
 }

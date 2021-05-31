@@ -11,7 +11,7 @@
                     <div id="header" class="flex">
                         <div id="body" class="flex flex-col ml-5">
                             <h4 id="name" class="text-xl font-semibold mb-2"><span
-                                    class="font-bold">Service:</span> {{$order->service->title}}</h4>
+                                    class="font-bold">Service:</span> {{$order->service->title ?? ''}}</h4>
                             <p id="job" class="text-gray-800 mt-2"><span
                                     class="font-bold">Buyer Requirement:</span> {{$order->requirements}}</p>
                             <p id="job" class="text-gray-800 mt-2"><span
@@ -67,12 +67,12 @@
                         <div id="header" class="flex">
                             <div id="body" class="flex flex-col ml-5">
                                 <h4 id="name" class="text-xl font-semibold mb-2"><span
-                                        class="font-bold">Service:</span> {{$order->service->title}}</h4>
+                                        class="font-bold">Service:</span> {{$order->service->title ?? ''}}</h4>
                                 <p id="job" class="text-gray-800 mt-2"><span
                                         class="font-bold">Your Requirements:</span> {{$order->requirements}}</p>
                                 <p id="job" class="text-gray-800 mt-2"><span
                                         class="font-bold">Seller:</span> <span
-                                        class="text-green-700">{{$order->service->user->name}}</span></p>
+                                        class="text-green-700">{{$order->service->user->name ?? ''}}</span></p>
                                 @if($order->status === 'pending')
                                     <div class="mt-2 flex-row">
                                         <x-jet-button class="bg-blue-500" wire:click="chat({{$order->id}})">
@@ -101,6 +101,9 @@
                                         <h2 class="text-purple-500 mb-2">Delivery Completed</h2>
                                         <x-jet-button class="bg-green-700" wire:click="checkWork({{$order->id}})">
                                             {{ __('Check Delivery') }}
+                                        </x-jet-button>
+                                        <x-jet-button class="bg-green-700" wire:click="disputeWork({{$order->id}})">
+                                            {{ __('Dispute Delivery') }}
                                         </x-jet-button>
                                     </div>
                                 @else
