@@ -14,25 +14,25 @@
                             </ul>
                         </div>
                     @endif
-                    <h6 class="card-title">Create Service</h6>
-                    <form class="forms-sample" method="POST" action="{{route('admin-service-store')}}" enctype="multipart/form-data">
+                    <h6 class="card-title">Edit Service</h6>
+                    <form class="forms-sample" method="POST" action="{{route('admin-service-update',['id'=>$service->id])}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" name="title" id="title" autocomplete="off"
+                            <input type="text" class="form-control" name="title" id="title" autocomplete="off" value="{{$service->title}}"
                                    placeholder="Enter Title">
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea class="form-control" name="description" id="description"></textarea>
+                            <textarea class="form-control" name="description" id="description">{{$service->description}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="number" min="0" class="form-control" id="price" name="price">
+                            <input type="number" min="0" class="form-control" id="price" name="price" value="{{$service->start_price}}">
                         </div>
                         <div class="form-group">
                             <label for="duration">Duration(days)</label>
-                            <input type="number" min="0" class="form-control" id="duration" name="duration">
+                            <input type="number" min="0" class="form-control" id="duration" name="duration" value="{{$service->delivery_days}}">
                         </div>
                         <div class="form-group">
                             <label for="photo">Featured Image</label>

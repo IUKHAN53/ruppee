@@ -4,28 +4,28 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Services</h4>
+                    <h4 class="card-title">Users</h4>
                     <p class="card-description">
-                        Services sold by users
+                        Application Users
                     </p>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                             <tr>
                                 <th>
-                                    User
+                                    #
+                                </th>
+                                <th>
+                                    Profile Photo
                                 </th>
                                 <th>
                                     Name
                                 </th>
                                 <th>
-                                    Delivery Time (Days)
+                                    Email
                                 </th>
                                 <th>
-                                    Start Price
-                                </th>
-                                <th>
-                                    Published At
+                                    Created At
                                 </th>
                                 <th>
                                     Actions
@@ -33,27 +33,27 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($services as $service)
+                            @foreach($users as $user)
                                 <tr>
                                     <td class="py-1">
-                                        {{$service->user->name}}
+                                        {{$user->id}}
                                     </td>
                                     <td>
-                                        {{$service->title}}
+                                        <img src="{{$user->profile_photo_url}}" width="50" height="50" alt="">
                                     </td>
                                     <td>
-                                        {{$service->delivery_days}}
+                                        {{$user->name}}
                                     </td>
                                     <td>
-                                        Rs. {{$service->start_price}}
+                                        {{$user->email}}
                                     </td>
                                     <td>
-                                        {{$service->created_at->diffForHumans()}}
+                                        {{$user->created_at->diffForHumans()}}
                                     </td>
                                     <td>
-{{--                                        <a class="btn-sm btn-outline-info" href="{{route('admin-service-show',$service->id)}}"><i data-feather="eye"></i></a>--}}
-                                        <a class="btn-sm btn-outline-primary" href="{{route('admin-service-edit',$service->id)}}"><i data-feather="edit"></i></a>
-                                        <a class="btn-sm btn-outline-danger" href="{{route('admin-service-delete',$service->id)}}"><i data-feather="trash"></i></a>
+{{--                                        <a class="btn-sm btn-outline-info" href="{{route('admin-user-show',$user->id)}}"><i data-feather="eye"></i></a>--}}
+                                        <a class="btn-sm btn-outline-primary" href="{{route('admin-user-edit',$user->id)}}"><i data-feather="edit"></i></a>
+                                        <a class="btn-sm btn-outline-danger" href="{{route('admin-user-delete',$user->id)}}"><i data-feather="trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

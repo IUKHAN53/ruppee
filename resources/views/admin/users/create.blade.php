@@ -14,8 +14,8 @@
                             </ul>
                         </div>
                     @endif
-                    <h6 class="card-title">Create Service</h6>
-                    <form class="forms-sample" method="POST" action="{{route('admin-service-store')}}" enctype="multipart/form-data">
+                    <h6 class="card-title">Create User</h6>
+                    <form class="forms-sample" method="POST" action="{{route('admin-user-store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="title">Title</label>
