@@ -18,8 +18,8 @@ class CreateDisputesTable extends Migration
             $table->foreignId('buyer_proposal_id');
             $table->foreignId('user_id');
             $table->string('status')->default('in-progress');
-            $table->unsignedBigInteger('decision_for');
-            $table->unsignedBigInteger('decision_against');
+            $table->unsignedBigInteger('decision_for')->nullable();
+            $table->unsignedBigInteger('decision_against')->nullable();
             $table->foreign('decision_for')->references('id')->on('users');
             $table->foreign('decision_against')->references('id')->on('users');
             $table->timestamps();

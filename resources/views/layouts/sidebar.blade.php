@@ -76,10 +76,10 @@
                             <a href="{{ route('admin-disputes') }}"
                                class="nav-link {{ active_class(['admin/disputes']) }}">View Disputes</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin-disputes-create') }}"
-                               class="nav-link {{ active_class(['admin/disputes/create']) }}">Create Dispute</a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{ route('admin-disputes-create') }}"--}}
+{{--                               class="nav-link {{ active_class(['admin/disputes/create']) }}">Create Dispute</a>--}}
+{{--                        </li>--}}
                     </ul>
                 </div>
             </li>

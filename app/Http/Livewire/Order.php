@@ -47,8 +47,6 @@ class Order extends Component
         Dispute::create([
             'buyer_proposal_id' => $order_id,
             'user_id' => auth()->id(),
-            'decision_for' => 0,
-            'decision_against' => 0,
         ]);
         $this->redirect(route('orders'));
     }

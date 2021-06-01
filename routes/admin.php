@@ -28,10 +28,11 @@ Route::get('/users/delete/{id}', [UserController::class, 'destroy'])->name('admi
 
 //Disputes
 Route::get('/disputes', [DisputeController::class, 'index'])->name('admin-disputes');
-Route::get('/disputes/create', [DisputeController::class, 'create'])->name('admin-disputes-create');
-Route::get('/disputes/view', [DisputeController::class, 'show'])->name('admin-dispute-show');
-Route::get('/disputes/edit/{id}', [DisputeController::class, 'edit'])->name('admin-dispute-edit');
-Route::post('/disputes/edit/{id}', [DisputeController::class, 'update'])->name('admin-dispute-update');
-Route::post('/disputes/create', [DisputeController::class, 'store'])->name('admin-dispute-store');
-Route::get('/disputes/delete/{id}', [DisputeController::class, 'destroy'])->name('admin-dispute-delete');
+//Route::get('/disputes/create', [DisputeController::class, 'create'])->name('admin-disputes-create');
+//Route::get('/disputes/view', [DisputeController::class, 'show'])->name('admin-dispute-show');
+//Route::get('/disputes/edit/{id}', [DisputeController::class, 'edit'])->name('admin-dispute-edit');
+Route::get('/disputes/resolve', [DisputeController::class, 'resolveDispute'])->name('admin-dispute-resolve');
+//Route::post('/disputes/edit/{id}', [DisputeController::class, 'update'])->name('admin-dispute-update');
+//Route::post('/disputes/create', [DisputeController::class, 'store'])->name('admin-dispute-store');
+//Route::get('/disputes/delete/{id}', [DisputeController::class, 'destroy'])->name('admin-dispute-delete');
 

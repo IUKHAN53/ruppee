@@ -102,9 +102,13 @@
                                         <x-jet-button class="bg-green-700" wire:click="checkWork({{$order->id}})">
                                             {{ __('Check Delivery') }}
                                         </x-jet-button>
-                                        <x-jet-button class="bg-green-700" wire:click="disputeWork({{$order->id}})">
-                                            {{ __('Dispute Delivery') }}
-                                        </x-jet-button>
+                                        @if($order->disputed())
+                                            <p class="text-red-500 mb-2">Disputed</p>
+                                        @else
+                                            <x-jet-button class="bg-red-700" wire:click="disputeWork({{$order->id}})">
+                                                {{ __('Dispute Delivery') }}
+                                            </x-jet-button>
+                                        @endif
                                     </div>
                                 @else
                                     <div class="mt-2 flex-row">
