@@ -18,7 +18,7 @@ class BuyerProposal extends Model
     }
     public function scopeDisputed(){
         $disputes = Dispute::where('buyer_proposal_id',$this->id)->get();
-        if($disputes != null){
+        if($disputes->isNotEmpty()){
             return $disputes;
         }else{
             return false;
