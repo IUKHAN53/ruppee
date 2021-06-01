@@ -36,3 +36,6 @@ Route::get('/disputes/resolve', [DisputeController::class, 'resolveDispute'])->n
 //Route::post('/disputes/create', [DisputeController::class, 'store'])->name('admin-dispute-store');
 //Route::get('/disputes/delete/{id}', [DisputeController::class, 'destroy'])->name('admin-dispute-delete');
 
+//Profile
+Route::get('/profile', [DashboardController::class, 'edit_profile'])->name('admin-profile-edit');
+Route::post('/profile', [DashboardController::class, 'update_profile'])->name('admin-profile-update');
