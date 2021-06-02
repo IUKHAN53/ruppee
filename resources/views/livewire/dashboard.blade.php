@@ -49,7 +49,7 @@
                             @endif
                         </div>
                         <div>
-                            Reviews: {!! get_review_stars($service->stars ?? 0) !!}
+                            Reviews: {!! get_review_stars($service->stars() ?? 0) !!}
                         </div>
                     </div>
                 @endforeach
@@ -99,7 +99,7 @@
                             @endif
                         </div>
                         <div>
-                            Reviews: {!! get_review_stars($service->stars ?? 0) !!}
+                            Reviews: {!! get_review_stars($service->stars() ?? 0) !!}
                         </div>
                     </div>
                 @endforeach

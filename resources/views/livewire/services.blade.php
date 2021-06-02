@@ -28,7 +28,7 @@
                                 <p><span class="font-bold">Delivery Time: </span> {{$service->delivery_days}} Days</p>
                             </div>
                             <div>
-                                Reviews: {!! get_review_stars($service->stars ?? 0) !!}
+                                Reviews: {!! get_review_stars($service->stars() ?? 0) !!}
                             </div>
                             <div class="mt-2">
                                 @if(auth()->id() != $service->user->id)

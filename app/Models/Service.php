@@ -15,7 +15,13 @@ class Service extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public function scopeStars(){
-        return Review::where('service_id',$this->id)->withAvg('stars')->get();
+        $stars = Review::where('service_id',$this->id)->get()->pluck('stars')->avg();
+        return (is_numeric($stars))?$stars:0;
     }
 }

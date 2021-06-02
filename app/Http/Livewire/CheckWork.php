@@ -39,7 +39,8 @@ class CheckWork extends Component
 
     public function leaveReview(){
         $this->validate([
-           'review' => 'required|numeric|min:1|max:5'
+           'stars' => 'required|numeric|min:1|max:5',
+           'review' => 'required'
         ]);
         Review::create([
             'review' => $this->review,

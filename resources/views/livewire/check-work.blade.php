@@ -50,10 +50,13 @@
                             </div>
                         </div>
                         <hr>
-                        <h4>Review Work</h4>
-                        @if($is_reviewed)
-                            Review Completed
+                        @if($is_reviewed && $order->review)
+                            Review By you: <span
+                                class="text-gray-500 font-bold justify-end">{{$order->review->review}}</span>
+                            {!! get_review_stars($order->review->stars) !!}
                         @else
+                            <h4>Review Work</h4>
+
                             <div class="pb-6">
                                 <label for="review" class="font-semibold text-gray-700 block pb-1">Leave a
                                     review</label>
@@ -69,7 +72,7 @@
                                            type="number" wire:model="stars" min="1" step="1" max="5"/>
                                 </div>
                             </div>
-                            <x-jet-button wire:click="leaveReview()">
+                            <x-jet-button wire:click="leaveReview">
                                 {{ __('Save Review') }}
                             </x-jet-button>
                         @endif

@@ -19,6 +19,7 @@ class BuyerProposal extends Model
     public function review(){
         return $this->hasOne(Review::class);
     }
+
     public function scopeDisputed(){
         $disputes = Dispute::where('buyer_proposal_id',$this->id)->get();
         if($disputes->isNotEmpty()){
