@@ -48,6 +48,9 @@
                                 <p class="text-green-500 font-bold ml-3">You own this Service</p>
                             @endif
                         </div>
+                        <div>
+                            Reviews: {!! get_review_stars($service->stars ?? 0) !!}
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -94,6 +97,9 @@
                             @else
                                 <p class="text-green-500 font-bold ml-3">You own this Service</p>
                             @endif
+                        </div>
+                        <div>
+                            Reviews: {!! get_review_stars($service->stars ?? 0) !!}
                         </div>
                     </div>
                 @endforeach

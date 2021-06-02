@@ -49,10 +49,32 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
+                        <h4>Review Work</h4>
+                        @if($is_reviewed)
+                            Review Completed
+                        @else
+                            <div class="pb-6">
+                                <label for="review" class="font-semibold text-gray-700 block pb-1">Leave a
+                                    review</label>
+                                <div class="flex">
+                                    <input id="review" class="border-1  rounded-r px-4 py-2 w-full"
+                                           type="text" wire:model="review"/>
+                                </div>
+                            </div>
+                            <div class="pb-6">
+                                <label for="review" class="font-semibold text-gray-700 block pb-1">Give Stars</label>
+                                <div class="flex">
+                                    <input id="review" class="border-1  rounded-r px-4 py-2 w-full"
+                                           type="number" wire:model="stars" min="1" step="1" max="5"/>
+                                </div>
+                            </div>
+                            <x-jet-button wire:click="leaveReview()">
+                                {{ __('Save Review') }}
+                            </x-jet-button>
+                        @endif
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>

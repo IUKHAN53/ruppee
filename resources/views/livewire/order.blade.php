@@ -47,6 +47,7 @@
                                 </div>
                             @elseif($order->status === 'completed')
                                 <h2 class="text-purple-500">Delivery Completed</h2>
+                                {!! get_review_stars($order->review->stars) !!}
                             @else
                                 <div class="mt-2 flex-row">
                                     <h3 class="text-red-500"><span class="font-extrabold">Order Rejected</span></h3>
