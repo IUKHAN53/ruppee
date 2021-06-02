@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
 
 
@@ -19,6 +20,11 @@ class Review extends Model
     public function buyer_proposal()
     {
         return $this->belongsTo(BuyerProposal::class);
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
     }
 
 }
