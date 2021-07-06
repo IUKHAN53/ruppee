@@ -28,13 +28,15 @@ class BuyService extends Component
 
     public function confirmBuy(){
         $this->validate();
-        if(BuyerProposal::create([
+        $order = BuyerProposal::create([
             'requirements' => $this->requirements,
             'price' => $this->price,
             'duration' => $this->duration,
             'service_id' => $this->service->id,
             'user_id' => auth()->id(),
-        ]))
-            $this->redirect(route('orders'));
+        ]);
+        if($order){
+            $this->redirect(route('make-payment',['order_id'=>$order->id,'amount'=>$order->price]));
+        }
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Dispute;
 use App\Http\Livewire\Inbox;
 use App\Http\Livewire\Order;
+use App\Http\Livewire\Payment;
 use App\Http\Livewire\Services;
 use App\Http\Livewire\ServicesRequest;
 use App\Http\Livewire\ServicesSell;
@@ -24,6 +25,7 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/sell-services',ServicesSell::class)->name('sell-service');
     Route::get('/request-services',ServicesRequest::class)->name('request-service');
     Route::get('/buy-service/{service_id}',BuyService::class)->name('buy-service');
+    Route::get('/make-payment',Payment::class)->name('make-payment');
     Route::get('/submit-work',SubmitWork::class)->name('submit-work');
     Route::get('/check-work',CheckWork::class)->name('checkWork');
     Route::get('/', Dashboard::class)->name('dashboard');

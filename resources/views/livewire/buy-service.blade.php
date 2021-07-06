@@ -70,7 +70,7 @@
                     </x-jet-action-message>
 
                     <x-jet-button>
-                        {{ __('Save') }}
+                        {{ __('Proceed to Payment') }}
                     </x-jet-button>
                 </x-slot>
             </x-jet-form-section>
