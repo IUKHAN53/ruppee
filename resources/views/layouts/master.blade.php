@@ -31,6 +31,7 @@ License: You must have a valid license purchased only from https://themeforest.n
     <!-- end common css -->
 
     @stack('style')
+    <script defer src="https://unpkg.com/alpinejs@3.1.1/dist/cdn.min.js"></script>
 </head>
 <body data-base-url="{{url('/')}}">
 
