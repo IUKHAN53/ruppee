@@ -15,6 +15,7 @@ class Analytics extends Component
     public $order_count = 0;
     public $orders;
     public $earnings = 0;
+    public $total_spent = 0;
     public $buyer_count = 0;
     public $avg_rating = 0;
     public $labels = [];
@@ -31,6 +32,8 @@ class Analytics extends Component
         }, $this->services);
         $this->avg_rating = Review::whereIn('service_id', $this->services)->get()->avg('stars');
         $this->orders = BuyerProposal::where('status','completed')->whereIn('service_id', $this->services)->get();
+        $requested = BuyerProposal::where('user_id', auth()->id())->pluck('price')->toArray();
+        $this->total_spent = array_sum($requested);
         $this->buyer_count = $this->orders->unique('user_id')->count();
         $this->order_count = $this->orders->count();
         $something = DB::table('buyer_proposals')->get()->groupBy(function($date) {
