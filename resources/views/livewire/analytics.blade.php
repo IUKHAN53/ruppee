@@ -48,7 +48,6 @@
 </div>
 @push('scripts')
     <script>
-        // livewire.on('loadChart', (label, series) => {
         let labels = @json($labels);
         let series = @json($series);
         let ctx = document.getElementById('myChart');

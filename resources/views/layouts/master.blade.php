@@ -64,6 +64,7 @@ License: You must have a valid license purchased only from https://themeforest.n
 <script src="{{ asset('assets/plugins/feather-icons/feather.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <!-- end base js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
 
 <!-- plugin js -->
 @stack('plugin-scripts')
